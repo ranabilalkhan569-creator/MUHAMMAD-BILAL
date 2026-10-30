@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: #fafafa;
+  }
+
+  html.dark body {
+    color: #f1f5f9;
+    background-color: #0b1120;
+    letter-spacing: 0.008em;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  /* WCAG 2.2 AA/AAA high-contrast focus rings across light and dark surfaces */
+  :focus-visible {
+    outline: 2.5px solid #1d4ed8;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.92);
+  }
+
+  html.dark :focus-visible {
+    outline: 2.5px solid #fbbf24;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(11, 17, 32, 0.94);
+  }
+}
+
+/* Accessible audio scrub slider (WebKit, Blink & Firefox in Light and Dark themes) */
+input[type="range"].audio-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].audio-scrubber::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: #cbd5e1;
+}
+
+html.dark input[type="range"].audio-scrubber::-webkit-slider-runnable-track {
+  background: #334155;
+}
+
+input[type="range"].audio-scrubber::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: #cbd5e1;
+}
+
+html.dark input[type="range"].audio-scrubber::-moz-range-track {
+  background: #334155;
+}
+
+input[type="range"].audio-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #1d4ed8;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
+  margin-top: -5px;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.dark input[type="range"].audio-scrubber::-webkit-slider-thumb {
+  background: #60a5fa;
+  border: 2px solid #0b1120;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+}
+
+input[type="range"].audio-scrubber::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #1d4ed8;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.dark input[type="range"].audio-scrubber::-moz-range-thumb {
+  background: #60a5fa;
+  border: 2px solid #0b1120;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+}
+
+html.dark input[type="range"].audio-scrubber:focus-visible::-webkit-slider-thumb {
+  background: #fbbf24;
+  border-color: #0b1120;
+}
+
+html.dark input[type="range"].audio-scrubber:focus-visible::-moz-range-thumb {
+  background: #fbbf24;
+  border-color: #0b1120;
+}
+
+input[type="range"].audio-scrubber:hover::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+
+input[type="range"].audio-scrubber:hover::-moz-range-thumb {
+  transform: scale(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

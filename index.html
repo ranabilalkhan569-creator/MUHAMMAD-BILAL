@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free PDF AI — Read PDFs. Listen with AI. Ask Anything.</title>
+    <meta
+      name="description"
+      content="Read PDFs. Listen with AI. Ask Anything. Convert uploaded PDF documents into natural-sounding audio summaries, live voice conversations, and Google Search web research."
+    />
+    <meta property="og:title" content="Free PDF AI — Read PDFs. Listen with AI. Ask Anything." />
+    <meta
+      property="og:description"
+      content="Read PDFs. Listen with AI. Ask Anything. Convert uploaded PDF documents into natural-sounding audio summaries, live voice conversations, and Google Search web research."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("free-pdf-ai-theme");
+          if (
+            saved === "dark" ||
+            (!saved &&
+              window.matchMedia &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#FAFAFA] text-slate-900 dark:bg-[#0B1120] dark:text-slate-100 antialiased selection:bg-blue-700 selection:text-white dark:selection:bg-amber-400 dark:selection:text-slate-950 transition-colors duration-150">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

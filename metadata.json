@@ -1,0 +1,6 @@
+{
+  "name": "VocaRead — Accessible PDF Voice AI",
+  "description": "Convert uploaded PDF documents into natural-sounding audio summaries, screen-reader visual descriptions, plain-language guides, and live real-time voice chat for accessibility.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
